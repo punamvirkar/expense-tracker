@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Expense Tracker</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f') center/cover no-repeat;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.6);
+        }
+
+        /* Glass card */
+        .glass {
+            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.92);
+            border-radius: 18px;
+        }
+
+        /* Hover effect */
+        button:hover {
+            transform: scale(1.05);
+            transition: 0.2s;
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px rgba(0,255,100,0.5);
+        }
+
+        @keyframes floatCard {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: floatCard 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div style="position: relative; z-index: 2;">
+
+    <!-- TITLE -->
+    <h1 class="text-center text-white mt-5" style="font-weight:700;">
+        💰 Expense Tracker
+    </h1>
+
+    <p class="text-center text-light mb-4">
+        Create your account 🚀
+    </p>
+
+    <!-- REGISTER CARD -->
+    <div class="container d-flex justify-content-center align-items-center" style="height:70vh;">
+
+        <div class="card shadow p-4 glass floating" style="width: 350px;">
+
+            <h4 class="text-center text-success mb-3">Register</h4>
+
+            <form method="POST">
+
+                <input type="text" name="username" class="form-control mb-2" placeholder="Username" required>
+
+                <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+
+                <button class="btn btn-success w-100">Register</button>
+
+            </form>
+
+            <p class="text-center mt-3">
+                Already have account? <a href="/login">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
